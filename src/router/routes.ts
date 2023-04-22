@@ -25,4 +25,9 @@ export default [
     meta: { title: "登录", isMenu: true },
     component: Login,
   },
+  {
+    path: "*",
+    meta: { title: "404", isMenu: true },
+    component: NotFount,
+  },
 ];
