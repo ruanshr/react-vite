@@ -1,0 +1,38 @@
+{
+  "root": true, // 找到这后，不再向上级目录寻找
+  // 解析选项
+  "parserOptions": {
+    "ecmaVersion": 6, //  指定你想要使用的 ECMAScript 版本 3/5/6/7/8/9
+    "sourceType": "module", // "script"(default) or "module"，标明你的代码是模块还是script
+    "ecmaFeatures": {
+      // 是否支持某些feature，默认均为false
+      "globalReturn": true, //是否允许全局return
+      "impliedStrict": true, //是否为全局严格模式
+      "jsx": true  // 开启jsx
+    }
+  },
+  "parser": "@typescript-eslint/parser", 
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  // "plugins": ["a-plugin"], //第三方 插件a
+  // "processor": "a-plugin/a-processor", // 制定处理器为插件a的处理器
+  "rules": {
+    "eqeqeq": "error",
+    "no-return-assign":"error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "react/no-deprecated": "off"
+  },
+  // 指定一些全局变量，类似于global.d.ts的作用
+  "globals": {
+    "RC": "writable",
+    "window": "readonly"
+  },
+  // 忽略哪些文件
+  "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
+}
